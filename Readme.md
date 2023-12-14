@@ -1,13 +1,8 @@
-Menu ? (fetch all stats? fetch today only? fetch per char?)
+Goals: 
 
-Extension should basically shut off if it's not the streetfighter site
-    - How to check what URL we're on?
-    - How to change the URL we're on?
+- collect your stats, including match history
+- collect stats for people you follow
+- allow easy export of the data as csv or json
+- more stuff?
 
-Fetching Stats:
-    - How to inspect page source
-    - what's the trick to pulling the stats?
-    - what do we do with the stats?
-        - JSON - it's just easier
-        - send JSON to remote stat saving API muahahahah
-    
+PS - This is my first chrome extension and I am learning TypeScript while writing it    
