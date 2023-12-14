@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "The BBC Buddy (working title)",
+  "description": "Helps capture your stats for Street Fighter 6",
+  "version": "0.1",
+  "icons": {
+ 	"16": "hello_extensions.png"
+  },
+  "background": {
+	"service_worker": "background_workers/background.js"
+  },
+  "permissions": [
+    "activeTab", "scripting", "offscreen", "nativeMessaging", "tabs", "storage", "unlimitedStorage"
+  ],
+  "action": {
+    "default_icon": {
+		"16": "hello_extensions.png"
+	}
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.streetfighter.com/6/buckler/*"],
+      "js": [
+        "bbclib/SFApiUrls.js", "bbclib/Card.js", "bbclib/BBCStorage.js"
+      ]
+    },
+    {
+      "matches": ["https://www.streetfighter.com/6/buckler/profile/*"],
+      "js": [
+        "content_scripts/bucklerprofile.js"
+      ]
+    },
+    {
+      "matches": ["https://www.streetfighter.com/6/buckler/profile/*/battlelog"],
+      "js": [
+        "content_scripts/bucklerbattlelog.js"
+      ]
+    }
+  ]
+}
